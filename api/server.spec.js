@@ -18,4 +18,16 @@ describe("GET /", function() {
             expect(res.status).toBe(200);
         })
     })
+    describe("GET /api/users", () => {
+        it('should return: shall not pass!', async () => {
+            const res = await request(server).get("/api/users");
+            expect(res.body.you).toBe(undefined);
+        })
+    })
+    describe ("POST /api/auth/login", () => {
+        it("should tell me im logged in", async () =>{
+          const res=await request(server).get("/api/auth/login");
+          expect(200)
+        })
+      })
 })
